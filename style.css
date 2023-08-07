@@ -1,0 +1,192 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+html{
+    scroll-behavior: smooth;
+}
+#header{
+    width: 100%;
+    height: 20vh;
+    background-color: rgba(72, 72, 72, 0.535);
+    background-size: cover;
+    background-position: center;
+    opacity: 0.9;
+    position: relative;
+}
+nav{
+    display: flex;
+    padding: 1px 10px;
+    align-items: center;
+    justify-content: space-between;
+ 
+}
+.navPanel{
+    flex:1;
+    text-align: right;
+}
+.navPanel ul li{
+    list-style: none;
+    display: inline-block;
+    padding: 10px;
+    position: relative;
+    ;
+}
+.navPanel ul li a{
+    color: rgb(126, 21, 84);
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+}
+.navPanel ul li::after{
+    content: "";
+    width: 0%;
+    height: 2px;
+    display: block;
+    margin: auto;
+    background: rgb(12, 65, 239);
+    transition: 0.5s;
+}
+.navPanel ul li:hover::after{
+    width: 100%;
+}
+.welcome{
+    height: 40px ;
+    background-color: rgba(179, 178, 178, 0.535);
+}
+.mustang{
+    width: 100%;
+    height: 60vh;
+    background-image: url(assets/joey-banks-YApiWyp0lqo-unsplash\ \(1\).jpg); 
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0.7;
+    position: relative;
+
+    &::before{
+        content:'';
+        position: absolute;
+        top: 0px;
+        right: 0px;
+        bottom: 0px;
+        left: 0px;
+        background-color: rgba(107, 107, 104, 0.1); 
+    }
+}
+.welcome h1{
+    color: rgb(139, 33, 33);
+    text-align: center;
+    padding: 8px 0px 250px;
+}
+.welcomeMessage{
+    height: 50px ;
+    background-color: rgba(179, 178, 178, 0.535);
+    text-align: center;
+    padding: 5px;
+}
+/*------------offerings-----------*/
+.offerings{
+    width: 70%;
+    margin: auto;
+    padding-top: 80px;
+    text-align: center;
+}
+.offerings h1{
+    font-weight: 600;
+    font-size: 20px;
+    color: rgb(193, 31, 31);
+}
+.offerings p{
+    color: rgb(90, 82, 82);
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 25px;
+    padding: 10px;
+}
+.columns{
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-between;
+}
+.offeringColumn{
+    flex-basis: 30%;
+    box-sizing: border-box;
+    padding: 15px 12px;
+    background-color: antiquewhite;
+    border-radius: 10px;
+    margin-bottom: 5%;
+    transition: 0.5s;
+}
+.offeringColumn h3{
+    padding-bottom: 10px;
+    font-weight: 500;
+    text-align: center;
+}
+.offeringColumn:hover{
+    box-shadow: 0 0 25px 5px rgba(0,0,0,0.5)
+}
+/*------------Market Place-----------*/
+.marketPlace{
+    width: 70%;
+    margin: auto;
+    padding-top: 80px;
+    text-align: center;
+}
+.marketPlace h1{
+    font-weight: 600;
+    font-size: 20px;
+    color: rgb(193, 31, 31);
+}
+.marketPlace p{
+    color: rgb(90, 82, 82);
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 25px;
+    padding: 10px;
+}
+#carInv div{
+    margin-left: 5%;
+    margin-bottom: 5%;
+    width: 40%;
+    height: 40%;
+    border-radius: 8px;
+    flex-basis: 35%;
+    background-color: rgb(219, 217, 214);
+    padding: 10px;
+    display: inline-block;
+    justify-content: space-between;
+
+
+    
+
+}
+.imgCar1 {
+    width: 200px;
+    height: 200px;
+    border-radius: 8px;
+}
+
+
+
+
+
+/*---------------Footer-------------*/
+#footer{
+    width: 100%;
+    background-color: rgba(72, 72, 72, 0.535);
+    background-size: cover;
+    background-position: center;
+    opacity: 1;
+    position: relative;
+}
+.footerPanel{
+    text-align: center;
+    padding: 10px 10px 5px;
+    position: relative;
+    color: rgb(126, 21, 84);
+    font-size: 12px;
+    font-weight: 600px;
+}

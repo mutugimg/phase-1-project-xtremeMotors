@@ -1,0 +1,124 @@
+{
+	"Cars": [
+		{
+			"id": 1,
+			"model": "Mazda",
+            "make": "Demio",
+			"yom": "2013",
+			"image": "https://dashboard.kaiandkaro.com/media/vehicles/images/d6536b86-55e2-4243-a13a-c0da38b2355f.jpeg",
+			"price": 600000.00
+		},
+		{
+			"id": 2,
+			"model": "Toyota",
+            "make": "Prado",
+			"yom": "2013",
+			"image": "https://dashboard.kaiandkaro.com/media/vehicles/images/e8aeca30-5d6c-444b-854a-ce72117fe98f.jpeg",
+			"price": 3500000.00
+		},
+        {
+			"id": 3,
+			"model": "Toyota",
+            "make": "Fielder",
+			"yom": "2015",
+			"image": "https://dashboard.kaiandkaro.com/media/vehicles/images/226c8bbd-a6c2-4f18-8d9b-21734e3cb261.jpeg",
+			"price": 1500000.00
+		},
+        {
+			"id": 4,
+			"model": "Subaru",
+            "make": "Outback",
+			"yom": "2015",
+			"image": "https://dashboard.kaiandkaro.com/media/vehicles/images/5acde91f-dbb8-4ea3-8542-6f593f805196.jpeg",
+			"price": 2500000.00
+		},
+        {
+			"id": 5,
+			"model": "BMW",
+            "make": "740i",
+			"yom": "2010",
+			"image": "https://dashboard.kaiandkaro.com/media/vehicles/images/WhatsApp_Image_2023-08-02_at_18.42.48_1.jpeg",
+			"price": 3000000.00
+		},
+        {
+			"id": 6,
+			"model": "BMW",
+            "make": "X3 xdrive 20D",
+			"yom": "2010",
+			"image": "https://dashboard.kaiandkaro.com/media/vehicles/images/WhatsApp_Image_2023-08-02_at_14.33.35_1.jpeg",
+			"price": 3600000.00
+		},
+        {
+			"id": 7,
+			"model": "Toyota",
+            "make": "Alphard",
+			"yom": "2008",
+			"image": "https://dashboard.kaiandkaro.com/media/vehicles/images/b389c57a-e60a-4163-871b-5e444c6f67b0.jpeg",
+			"price": 1115000.00
+		},
+        {
+			"id": 8,
+			"model": "Subaru",
+            "make": "Legacy",
+			"yom": "2012",
+			"image": "https://dashboard.kaiandkaro.com/media/vehicles/images/1a9e5af3-1cab-4f1b-b21b-36d776a9e5e6.jpeg",
+			"price": 1400000.00
+		},
+        {
+			"id": 9,
+			"model": "Mercedes Benz",
+            "make": "E250",
+			"yom": "2014",
+			"image": "https://dashboard.kaiandkaro.com/media/vehicles/images/IMG-20230724-WA0190.jpg",
+			"price": 3250000.00
+		},
+        {
+			"id": 10,
+			"model": "Mercedes Benz",
+            "make": "CLA 180",
+			"yom": "2015",
+			"image": "https://dashboard.kaiandkaro.com/media/vehicles/images/IMG-20230719-WA0065.jpg",
+			"price": 2700000.00
+		},
+        {
+			"id": 11,
+			"model": "Volkswagen",
+            "make": "Passat CC",
+			"yom": "2015",
+			"image": "https://dashboard.kaiandkaro.com/media/vehicles/images/b63d1cc0-592b-4def-a3bc-29280d42930a.jpeg",
+			"price": 2550000.00
+		},
+        {
+			"id": 12,
+			"model": "Mazda",
+            "make": "Axela Sport",
+			"yom": "2016",
+			"image": "https://dashboard.kaiandkaro.com/media/vehicles/images/WhatsApp_Image_2023-07-20_at_12.01.09_1.jpeg",
+			"price": 2200000.00
+		},
+        {
+			"id": 13,
+			"model": "Volkswagen",
+            "make": "Toureg",
+			"yom": "2016",
+			"image": "https://dashboard.kaiandkaro.com/media/vehicles/images/WhatsApp_Image_2023-07-27_at_14.16.52.jpeg",
+			"price": 6350000.00
+		},
+        {
+			"id": 14,
+			"model": "Nissan",
+            "make": "Juke",
+			"yom": "2010",
+			"image": "https://dashboard.kaiandkaro.com/media/vehicles/images/WhatsApp_Image_2023-07-27_at_11.33.54.jpeg",
+			"price": 850000.00
+		},
+        {
+			"id": 15,
+			"model": "Nissan",
+            "make": "Xtrail T30",
+			"yom": "2006",
+			"image": "https://dashboard.kaiandkaro.com/media/vehicles/images/WhatsApp_Image_2023-07-27_at_11.33.54.jpeg",
+			"price": 700000.00
+		}
+    ]
+}

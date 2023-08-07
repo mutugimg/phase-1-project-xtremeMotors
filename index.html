@@ -17,9 +17,9 @@
                 <img src="assets/race-car-g47e7e388f_1280.png" width="140" height="140" class="logo">
                 <div class="navPanel">
                     <ul>
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#offers">Favourites</a></li>
-                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#welc">Home</a></li>
+                        <li><a href="#offers">About Us</a></li>
+                        <li><a href="#ourcars">Our Cars</a></li>
                         <li><a href="#">FAQs</a></li>
                     </ul>
                 </div>
@@ -27,7 +27,7 @@
     </section>
 <!-------------------Welcome------------------->
     <section>
-        <div class="welcome">
+        <div id="welc" class="welcome">
         <h1>Welcome to Xtreme Motors</h1>
         </div>
         <div class="mustang"></div>
@@ -55,8 +55,29 @@
             </div>
         </div>
     </section>
+<!--------- Searchbar ------------>
+<section id="search" class="filterCars">
+    <div class="searchBar">
+        <div id="select">
+            <p id="selectText">All models</p>
+            <img src="https://cdn.pixabay.com/photo/2013/07/12/14/06/arrows-147753_1280.png" alt="arrow down">
+            <ul id="list">
+                <li class="options">All models</li>
+                <li class="options">Mercedes</li>
+                <li class="options">Toyota</li>
+                <li class="options">Volkswagen</li>
+                <li class="options">Mazda</li>
+                <li class="options">Nissan</li>
+                <li class="options">BMW</li>
+            </ul>
+            </button>
+        </div>
+        <input id="inputfield" type="text" placeholder="Search car in all models">
+       
+    </div>
+</section>
 <!--------- Marketplace ------------>
-    <section class="marketPlace">
+    <section id="ourcars" class="marketPlace">
         <h1>Market Place</h1>
         <p>Inquire about our industry leading cars.<br>Get started by looking through our inventory!</p>
         <div id="carInv" class="carInventory">

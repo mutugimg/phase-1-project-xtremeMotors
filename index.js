@@ -1,8 +1,13 @@
 const carMakeElement = document.getElementById("car-make");
-const carModelElement = document.getElementById("car-model")
-const carImageElement= document.getElementById("car-image")
-const carPriceElement= document.getElementById("car-price")
-const carInventoryElement= document.getElementById("carInv")
+const carModelElement = document.getElementById("car-model");
+const carImageElement= document.getElementById("car-image");
+const carPriceElement= document.getElementById("car-price");
+const carInventoryElement= document.getElementById("carInv");
+const carSearchBarElement= document.getElementById("search");
+const carSearchListElement= document.getElementById("list");
+const carSearchSelectTextElement= document.getElementById("selectText");
+const carSearchModelOptionsElement= document.getElementsByClassName("options");
+const carSearchInputFieldElement= document.getElementById("inputfield")
 let carId=1
 const url=" http://localhost:3000/Cars"
 
@@ -64,4 +69,13 @@ function displayData(carInfo) {
     //     beerReviewListElement.innerHTML += ('<li>'+beer.reviews[i]+'</li>');
     // }
 
+}
+carSearchBarElement.onclick = function(){
+    carSearchListElement.classList.toggle("open")
+}
+for (option of carSearchModelOptionsElement){
+    option.onclick = function(){
+        selectText.innerHTML = this.innerHTML
+        inputfield.placeholder = "Search car in " + selectText.innerHTML;
+    }
 }

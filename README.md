@@ -38,7 +38,4 @@ The search bar also helps those with a known and specific need to look them up e
 
 Once successful (or not), the user can make an inquiry either regarding a specific car seen in the inventory or make a special request such as direct import orders,financing or any other clarifications
 
-
-
-
 # LinkUrl to Video recording

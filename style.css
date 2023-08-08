@@ -7,6 +7,7 @@
 html{
     scroll-behavior: smooth;
 }
+/*------------header-----------*/
 #header{
     width: 100%;
     height: 20vh;
@@ -16,6 +17,7 @@ html{
     opacity: 0.9;
     position: relative;
 }
+/*------------Navigation bar-----------*/
 nav{
     display: flex;
     padding: 1px 10px;
@@ -52,6 +54,7 @@ nav{
 .navPanel ul li:hover::after{
     width: 100%;
 }
+/*------------home section-----------*/
 .welcome{
     height: 40px ;
     background-color: rgba(179, 178, 178, 0.535);
@@ -186,7 +189,7 @@ nav{
 #select ul.open{
     max-height: 300px;
 }
-/* Style the submit button */
+/*------------- Style the submit button ------------*/
 .searchButton{
     float: left;
     width: 20%;

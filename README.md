@@ -26,25 +26,3 @@ Our Application is a Single Page Application that utilizes the `display: none` a
 
 5. Open live server to view your html page.
 6. Navigate through the application using the functionalities designed in the MVP.
-
-# Application Features
-
-The Main Page of the application has a search button 
-# Doctors
-
-The Main Page of the application has a search button where the user can search for a doctor by name/speciality. This filters the cards of doctors according to the value of the search.
-
-One can also view all doctors registered within the application.
-
-# Appointments
-
-The Appointment Page has the following features:
-
-- Form where the User can book an appointment: Filling in the doctor name, date and preferred appointment time.
-- When submit button is clicked, a new appointment is created and listed at the bottom of the page and is POSTED to the backend
-
-# Health Nuggets
-
-The Health Nuggets Page displays health blogs posted by the Doctors/Users to share health information within the application
-
-# LinkUrl to Video recording

@@ -12,6 +12,7 @@ const carSearchInputFieldElement= document.getElementById("inputfield")
 const carSearchBarButton = document.getElementById("search-button")
 const enquireNowButton = document.getElementById("enquireBtn")
 const contactUsSendButton = document.getElementById("send-button")
+const contactUsForm = document.getElementById("contactus-form")
 const url=" http://localhost:3000"
 let carFilter;
 
@@ -76,45 +77,15 @@ carSearchSelectTextElement.onclick = function(){
 for (option of carSearchModelOptionsElement){
     option.onclick = function(){
         selectText.innerHTML = this.innerHTML
+        carFilter = selectText.innerHTML;
         inputfield.placeholder = "Search car in " + selectText.innerHTML;
         console.log(selectText.innerHTML);
-        searchCarsByModel(selectText.innerHTML);
+        searchCarsByModel(carFilter);
     }
 }
 
 
 function searchCarsByModel(modelName){
-    
-    fetch(`${url}/Cars`)
-      .then(response => {
-        if (!response.ok) {
-          throw new Error(response.status +"Item not found!");
-        }
-        return response.json();
-      })
-      .then(carInfo => {
-        let searchedCars = [];
-        if (modelName=="All models") {
-            searchedCars = carInfo;
-        } else {
-            for (let index = 0; index < carInfo.length; index++) {
-                if(carInfo[index].model==modelName){
-                    searchedCars.push(carInfo[index]) 
-                }   
-            }
-        }
-        
-        console.log(searchedCars);
-        // Display the fetched data
-        displayData(searchedCars);
-      })
-      .catch(error => {
-        console.error('Error:', error);
-      }); 
-
-}
-
-function searchCar(searchCar){
     
     fetch(`${url}/Cars`)
       .then(response => {
@@ -151,13 +122,54 @@ enquireNowButton.addEventListener("click",function(){
 })
 
 carSearchBarButton.addEventListener("click",function(){
-    let searchCar =document.getElementById("contact-name").value
-    console.log(searchCar);
-    searchCar(searchCar);
+    let searchCar = document.getElementById("inputfield").value
+    console.log("search Wordz; " + searchCar);
+    searchCarByWord(searchCar);
 })
 
-contactUsSendButton.addEventListener("click",function(){
+function searchCarByWord(searchCarWord){
     
+    fetch(`${url}/Cars`)
+      .then(response => {
+        if (!response.ok) {
+          throw new Error(response.status +"Item not found!");
+        }
+        return response.json();
+      })
+      .then(carInfo => {
+        let searchedCars = [];
+        let carsThatMatchSearch = [];
+        if (!carFilter || carFilter=="All models" ) {
+            console.log("car filter " + carFilter);
+            searchedCars = carInfo;
+            
+        } else {
+            console.log("car filter found " + carFilter);
+            for (let index = 0; index < carInfo.length; index++) {
+                if(carInfo[index].model==carFilter){
+                    searchedCars.push(carInfo[index]) 
+                }   
+            }
+        }
+
+        searchedCars.forEach(car => {
+            if(car.make.toLowerCase().includes(searchCarWord) || car.model.toLowerCase().includes(searchCarWord)){
+                carsThatMatchSearch.push(car);
+            }
+        });
+        
+        console.log(carsThatMatchSearch);
+        // Display the fetched data
+        displayData(carsThatMatchSearch);
+      })
+      .catch(error => {
+        console.error('Error:', error);
+      }); 
+
+}
+
+contactUsForm.addEventListener("submit",function(e){
+    e.preventDefault()
     console.log("sending message...");
     let message={
         name:document.getElementById("contact-name").value,

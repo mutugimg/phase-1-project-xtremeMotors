@@ -127,6 +127,18 @@
       "email": "mliz@gmail.com",
       "message_text": "I want to buy a benz",
       "id": 1
+    },
+    {
+      "name": "ian",
+      "email": "ian@gmail.com",
+      "message_text": "I want a bmw",
+      "id": 2
+    },
+    {
+      "name": "mukiri liz",
+      "email": "mliz@gmail.com",
+      "message_text": "I want a prado",
+      "id": 3
     }
   ]
 }

@@ -9,20 +9,20 @@ const carSearchSelectTextElement= document.getElementById("selectText");
 const carSearchBarArrowDown= document.getElementById("selectText");
 const carSearchModelOptionsElement= document.getElementsByClassName("options");
 const carSearchInputFieldElement= document.getElementById("inputfield")
-const carSearchBarButton = document.getElementsByClassName("searchButton")
+const carSearchBarButton = document.getElementById("search-button")
 const enquireNowButton = document.getElementById("enquireBtn")
-const url=" http://localhost:3000/Cars"
+const contactUsSendButton = document.getElementById("send-button")
+const url=" http://localhost:3000"
+let carFilter;
 
 document.addEventListener("DOMContentLoaded",function(){
     console.log("loadingDom")
     fetchDataById();
-
-    console.log("loadedDom")
 })
 
 function fetchDataById() {
 
-    fetch(`${url}`)
+    fetch(`${url}/Cars`)
       .then(response => {
         if (!response.ok) {
           throw new Error(response.status +"Item not found!");
@@ -57,20 +57,21 @@ function displayData(carInfo) {
     <h3 id="car-make"> ${carInfo[i].make} </h3>
     <h4 id="car-model">${carInfo[i].model}</h4>
     <p id="car-price">${carInfo[i].price}</p>
-    <button id="enquireBtn" type="button">
-        Enquire Now
+    <button id="enquireBtn" type="button" 
+    <a href="#contact"> Enquire Now</a>
+       
     </button>
 </div>`
  }
 
 }
+
 carSearchSelectTextElement.onclick = function(){
     carSearchListElement.classList.toggle("open")
 }
 
-enquireNowButton.onclick = function(){
-    console.log("enquring...");
-}
+
+
 
 for (option of carSearchModelOptionsElement){
     option.onclick = function(){
@@ -84,7 +85,7 @@ for (option of carSearchModelOptionsElement){
 
 function searchCarsByModel(modelName){
     
-    fetch(`${url}`)
+    fetch(`${url}/Cars`)
       .then(response => {
         if (!response.ok) {
           throw new Error(response.status +"Item not found!");
@@ -113,7 +114,78 @@ function searchCarsByModel(modelName){
 
 }
 
+function searchCar(searchCar){
+    
+    fetch(`${url}/Cars`)
+      .then(response => {
+        if (!response.ok) {
+          throw new Error(response.status +"Item not found!");
+        }
+        return response.json();
+      })
+      .then(carInfo => {
+        let searchedCars = [];
+        if (modelName=="All models") {
+            searchedCars = carInfo;
+        } else {
+            for (let index = 0; index < carInfo.length; index++) {
+                if(carInfo[index].model==modelName){
+                    searchedCars.push(carInfo[index]) 
+                }   
+            }
+        }
+        
+        console.log(searchedCars);
+        // Display the fetched data
+        displayData(searchedCars);
+      })
+      .catch(error => {
+        console.error('Error:', error);
+      }); 
+
+}
+
+
 enquireNowButton.addEventListener("click",function(){
-    console.log("enquring...");
+    console.log("enquring button...");
 })
+
+carSearchBarButton.addEventListener("click",function(){
+    let searchCar =document.getElementById("contact-name").value
+    console.log(searchCar);
+    searchCar(searchCar);
+})
+
+contactUsSendButton.addEventListener("click",function(){
+    
+    console.log("sending message...");
+    let message={
+        name:document.getElementById("contact-name").value,
+        email: document.getElementById("contact-email").value,
+        message_text: document.getElementById("message-text").value
+    }
+
+    postMessage(message);
+})
+
+// Post new message to server
+function postMessage(newMessage) {
+    fetch(`${url}/messages`, {
+        // Specify the HTTP method
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        // convert the object from the input field and convert to JSON
+        body: JSON.stringify(newMessage)
+    })
+        .then(res => res.json())
+        .then(message => console.log(message))
+}
+
+
+    
+
+
+
 

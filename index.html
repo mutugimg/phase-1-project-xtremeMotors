@@ -8,6 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script defer type="text/javascript" src="index.js"></script>
 </head>
 <body>
@@ -60,10 +61,10 @@
         <div class="searchBar">
             <div id="select">
                 <p id="selectText">All models</p>
-                <img src="https://cdn.pixabay.com/photo/2013/07/12/14/06/arrows-147753_1280.png" alt="arrow down">
+                <img id="arrowdown" src="https://cdn.pixabay.com/photo/2013/07/12/14/06/arrows-147753_1280.png" alt="arrow down">
                 <ul id="list">
                     <li class="options">All models</li>
-                    <li class="options">Mercedes</li>
+                    <li class="options">Mercedes Benz</li>
                     <li class="options">Toyota</li>
                     <li class="options">Volkswagen</li>
                     <li class="options">Mazda</li>
@@ -72,7 +73,7 @@
                 </ul>
             </div>
             <input id="inputfield" type="text" placeholder="Search car ">
-       
+            <button class="searchButton" type="submit"><i class="fa fa-search"></i></button>
          </div>
 </section>
 <!--------- Marketplace ------------>
@@ -89,7 +90,8 @@
                 <h4 id="car-model">Demio</h4>
                 <p id="car-price">Kshs. 600,000.00</p>
                 <button id="enquireBtn" type="button">
-                    Enquire Now
+                   
+                    Enquire Now 
                 </button>
             </div>
         </div>
@@ -143,8 +145,6 @@
                 <div class="inputBox">
                     <input type="submit" name="" value="Send">
                 </div>
-
-
             </form>
         
       

@@ -186,7 +186,22 @@ nav{
 #select ul.open{
     max-height: 300px;
 }
-
+/* Style the submit button */
+.searchButton{
+    float: left;
+    width: 20%;
+    padding: 10px;
+    background: brown;
+    color: white;
+    font-size: 17px;
+    border: 1px solid grey;
+    border-left: none; /* Prevent double borders */
+    cursor: pointer;
+  }
+  
+.searchButton button:hover {
+    background: grey;;
+}
 /*------------Market Place-----------*/
 .marketPlace h1{
     font-weight: 600;

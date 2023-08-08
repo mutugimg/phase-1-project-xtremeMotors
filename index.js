@@ -6,17 +6,21 @@ const carInventoryElement= document.getElementById("carInv");
 const carSearchBarElement= document.getElementById("search");
 const carSearchListElement= document.getElementById("list");
 const carSearchSelectTextElement= document.getElementById("selectText");
+const carSearchBarArrowDown= document.getElementById("selectText");
 const carSearchModelOptionsElement= document.getElementsByClassName("options");
 const carSearchInputFieldElement= document.getElementById("inputfield")
-let carId=1
+const carSearchBarButton = document.getElementsByClassName("searchButton")
+const enquireNowButton = document.getElementById("enquireBtn")
 const url=" http://localhost:3000/Cars"
 
 document.addEventListener("DOMContentLoaded",function(){
+    console.log("loadingDom")
+    fetchDataById();
+
     console.log("loadedDom")
-    fetchDataById(carId)
 })
 
-function fetchDataById(carId) {
+function fetchDataById() {
 
     fetch(`${url}`)
       .then(response => {
@@ -34,7 +38,7 @@ function fetchDataById(carId) {
         //Display error message in the container
         carNameElement.innerText = 'Item not found!';
       }); 
-  }
+}
 
 function displayData(carInfo) {
 
@@ -57,25 +61,59 @@ function displayData(carInfo) {
         Enquire Now
     </button>
 </div>`
-    // carMakeElement.innerHTML = `<h3>${car.make}</h3>`;
-    // carModelElement.innerHTML = `<h4>${car.model}</h4>`
-    // carImageElement.src = `${car.image}`;
-    // carImageElement.alt= car.make + car.model
-    // carPriceElement.innerHTML = `<p>${car.price}</p>`
  }
 
-
-    // for (let i=0; i<beer.reviews.length; i++){
-    //     beerReviewListElement.innerHTML += ('<li>'+beer.reviews[i]+'</li>');
-    // }
-
 }
-carSearchBarElement.onclick = function(){
+carSearchSelectTextElement.onclick = function(){
     carSearchListElement.classList.toggle("open")
 }
+
+enquireNowButton.onclick = function(){
+    console.log("enquring...");
+}
+
 for (option of carSearchModelOptionsElement){
     option.onclick = function(){
         selectText.innerHTML = this.innerHTML
         inputfield.placeholder = "Search car in " + selectText.innerHTML;
+        console.log(selectText.innerHTML);
+        searchCarsByModel(selectText.innerHTML);
     }
 }
+
+
+function searchCarsByModel(modelName){
+    
+    fetch(`${url}`)
+      .then(response => {
+        if (!response.ok) {
+          throw new Error(response.status +"Item not found!");
+        }
+        return response.json();
+      })
+      .then(carInfo => {
+        let searchedCars = [];
+        if (modelName=="All models") {
+            searchedCars = carInfo;
+        } else {
+            for (let index = 0; index < carInfo.length; index++) {
+                if(carInfo[index].model==modelName){
+                    searchedCars.push(carInfo[index]) 
+                }   
+            }
+        }
+        
+        console.log(searchedCars);
+        // Display the fetched data
+        displayData(searchedCars);
+      })
+      .catch(error => {
+        console.error('Error:', error);
+      }); 
+
+}
+
+enquireNowButton.addEventListener("click",function(){
+    console.log("enquring...");
+})
+
